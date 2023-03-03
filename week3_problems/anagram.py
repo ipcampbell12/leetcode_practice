@@ -53,7 +53,36 @@ def isAnagram2(input1, input2):
     return all(compas)
 
 
-print(isAnagram2(string7, string8))
+# print(isAnagram2(string7, string8))
 
 
 # just iteratre though keys of one
+
+
+# official solution
+
+def isAnagram3(input1, input2):
+
+    # check to make sure they are the same length
+    if len(input1) != len(input2):
+        return False
+
+    # start with empty hasmaps
+    countS, countT = {}, {}
+
+    for i in range(len(input1)):
+        countS[input1[i]] = 1 + countS.get(input1[i], 0)
+        countT[input2[i]] = 1 + countT.get(input2[i], 0)
+
+    for c in countS:
+        if countS[c] != countT(c, 0):
+            return False
+
+    # if loo
+    return True
+
+
+print(isAnagram2(string9, string10))
+
+# .get has default value of 0
+# use .get incase it doesn't exist
