@@ -75,10 +75,10 @@ def isAnagram3(input1, input2):
         countT[input2[i]] = 1 + countT.get(input2[i], 0)
 
     for c in countS:
-        if countS[c] != countT(c, 0):
+        if countS[c] != countT.get(c, 0):
             return False
 
-    # if loo
+    # if loop exits, means never got a false, and coule return true
     return True
 
 
